@@ -1,0 +1,6 @@
+Aizen;Haro! How're you doing Yamato?;0;R
+Risa;Yeah! You just disappeared yesterday!;0;L
+Aizen;Off with a date again?;1;R
+Player;No!:line,0;Yeah...:line,4
+Risa;Is that so?;2;L
+Aizen;Risa! You have a chance!;2;R
