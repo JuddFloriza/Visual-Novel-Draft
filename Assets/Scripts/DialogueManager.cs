@@ -20,8 +20,9 @@ public class DialogueManager : MonoBehaviour
 	public GameObject choiceBox;
 
 	private bool isTyping = false;
+	private bool autoDialogue = false;
 	private int counter = 0;
-	private int speed = 6;
+	private float speed = 6.0f;
 	// Use this for initialization
 	void Start () 
 	{
@@ -39,9 +40,18 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown (0) && playerTalking == false) 
 		{
-			ShowDialogue();
-			lineNum++;
-			isTyping = true;
+			if (!isTyping) {
+				Debug.Log ("Button being called.");
+				dialogueBox.text = "";
+				ShowDialogue ();
+				lineNum++;
+				isTyping = true;
+				autoDialogue = false;
+			} else {
+				Debug.Log ("AUTO DIALOGUE");
+				//ShowDialogue ();
+				autoDialogue = true;
+			}
 		}
 
 		UpdateUI ();
@@ -138,13 +148,19 @@ public class DialogueManager : MonoBehaviour
 			ClearButtons();
 		}
 
-		if(isTyping && Time.deltaTime * speed > 0.1f && playerTalking == false)
+		if (autoDialogue) {
+			dialogueBox.text = dialogue;
+			isTyping = false;
+			counter = 0;
+		}
+		else if(isTyping && Time.deltaTime * speed > 0.1f && playerTalking == false)
 		{
 //			if(Input.GetMouseButtonDown(0))
 //			{
 //				dialogueBox.text = dialogue;
 //				isTyping = false;
 //			}
+			Debug.Log("This is triggered.");
 
 			if(counter > dialogue.Length || dialogue.Length <= 0)
 			{
