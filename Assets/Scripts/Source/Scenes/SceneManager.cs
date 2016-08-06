@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SceneManager 
+public class SceneManager : Manager
 {
 	public static int sceneCount = 0;
 	public static Scene currentScene;
 	private static List<Scene> sceneList;
+	private SceneManager instance;
 
 	/// <summary>
 	/// Creates an instance of SceneManager
@@ -53,7 +54,7 @@ public class SceneManager
 		return scene;
 	}
 
-	public static void setCurrentSceneChild<T>() where T: Scene, new()
+	public static T setCurrentSceneChild<T>() where T: Scene, new()
 	{
 		T scene = new T();
 
@@ -62,19 +63,25 @@ public class SceneManager
 			currentScene = scene;
 			sceneList.Add (scene);
 		}
+		return scene;
 	}
 
-	public static void replaceCurrentScene<T>() where T: Scene, new()
+	public static T replaceCurrentScene<T>() where T: Scene, new()
 	{
 		T scene = new T();
-		currentScene.disposeScene(); //Destroy gameobject and unload resources
-		sceneList.Remove(currentScene);
 
+		if(currentScene != null)
+		{
+			scene.setParent(currentScene.parent);
+			currentScene.Dispose(); //Destroy gameobject and unload resources
+			sceneList.Remove(currentScene);
+		}
 		if(scene != null)
 		{
 			currentScene = scene;
 			sceneList.Add(scene);
 		}
+		return scene;
 	}
 
 	// Use this for initialization

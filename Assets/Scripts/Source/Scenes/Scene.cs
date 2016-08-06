@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Scene: SceneManager
+public class Scene: Manager
 {
 	private string sceneName;
 	private GameObject sceneObject;
@@ -51,23 +51,23 @@ public class Scene: SceneManager
 		transform = sceneObject.transform;
 	}
 	// Use this for initialization
-	protected override void initializeScene () 
+	protected virtual void initializeScene () 
 	{	
 	
 	}
 
-	protected override void hasInitializeScene ()
+	protected virtual void hasInitializeScene ()
 	{
 
 	}
 
 	// Update is called once per frame
-	protected override void updateScene () 
+	protected virtual void updateScene () 
 	{
 	
 	}
 
-	protected override void disposeScene ()
+	protected virtual void disposeScene ()
 	{
 
 	}

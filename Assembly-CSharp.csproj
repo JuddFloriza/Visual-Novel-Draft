@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\DialogueParser.cs" />
      <Compile Include="Assets\Scripts\Source\Main\Main.cs" />
+     <Compile Include="Assets\Scripts\Source\Main\Manager.cs" />
      <Compile Include="Assets\Scripts\Source\Scenes\Scene.cs" />
      <Compile Include="Assets\Scripts\Source\Scenes\SceneManager.cs" />
      <None Include="Assets\Data\Dialogue1.txt" />
