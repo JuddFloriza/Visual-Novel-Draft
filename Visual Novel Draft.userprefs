@@ -1,11 +1,12 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Source/Main/Main.cs">
+﻿<Properties StartupItem="Visual Novel Draft.CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Source\Main\Manager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Source/Main/Main.cs" Line="49" Column="2" />
-      <File FileName="Assets/Scripts/Source/Main/Manager.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/Source/Scenes/SceneManager.cs" Line="62" Column="4" />
-      <File FileName="Assets/Scripts/Source/Scenes/Scene.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\Source\Main\Manager.cs" Line="31" Column="3" />
+      <File FileName="Assets\Scripts\Source\Main\Main.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Source\Scenes\SceneManager.cs" Line="46" Column="39" />
+      <File FileName="Assets\Scripts\Source\Scenes\Scene.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DialogueManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

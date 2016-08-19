@@ -1,31 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Main : MonoBehaviour 
+public class Main : MonoBehaviour
 {
-	//Singleton Method
-	private static Main s_instance;
-	private void Awake()
-	{
-		s_instance = this;
-	}
-	private static Main instance
-	{
-		get
-		{
-			return s_instance;
-		}
-	}
+    //Singleton Method
+    private static Main s_instance;
+    private void Awake()
+    {
+        s_instance = this;
+    }
+    private static Main instance
+    {
+        get
+        {
+            return s_instance;
+        }
+    }
+
+    #region setfirstscene
+
+    private void setFirstScene()
+    {
+        SceneManager.replaceCurrentScene<GameScene>();
+    }
+
+    #endregion // setfirstscene
 
 
-	//Reference Variables
-	private bool hasInitialized = false;
-	private Manager mainManager = null;
+    //Reference Variables
+    private Manager mainManager = null;
 
 	private void initializeMain()
 	{
 		mainManager = new Manager();
 		CreateManager<Manager>(mainManager);
+        CreateManager<SceneManager>(mainManager);
 	}
 
 	private void hasInitializeMain()
@@ -37,6 +46,7 @@ public class Main : MonoBehaviour
 	private void Start () 
 	{
 		initializeMain();
+        setFirstScene();
 	}
 
 	// Update is called once per frame

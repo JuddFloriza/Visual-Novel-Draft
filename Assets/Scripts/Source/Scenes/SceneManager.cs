@@ -7,7 +7,7 @@ public class SceneManager : Manager
 	public static int sceneCount = 0;
 	public static Scene currentScene;
 	private static List<Scene> sceneList;
-	private SceneManager instance;
+	protected SceneManager instance;
 
 	/// <summary>
 	/// Creates an instance of SceneManager
@@ -35,25 +35,6 @@ public class SceneManager : Manager
 	/// </summary>
 	/// <param name="sceneName">The name of your scene.</param>
 	/// <returns>The scene instance</returns>
-	public static Scene CreateScene(string sceneName)
-	{
-		foreach(Scene scenes in sceneList)
-		{
-			if(scenes.getSceneName == sceneName)
-				return null;
-		}
-
-		Scene scene = new Scene (sceneName);
-
-		if(currentScene == null)
-			currentScene = scene;
-
-		sceneList.Add (scene);
-		sceneCount ++;
-
-		return scene;
-	}
-
 	public static T setCurrentSceneChild<T>() where T: Scene, new()
 	{
 		T scene = new T();

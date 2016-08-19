@@ -4,20 +4,21 @@ using System.Collections.Generic;
 
 public class Scene: Manager
 {
-	private string sceneName;
+	private string sceneName = null;
 	private GameObject sceneObject;
 	private Transform transform;
+
+	#region constructors
 
 	public Scene()
 	{
 		createObject(this);
+        sceneName = this.ToString();
 	}
 
-	public Scene(string sceneName)
-	{
-		this.sceneName = sceneName;
-		createObject(this);
-	}
+	#endregion // constructors
+
+	#region getters
 
 	public string getSceneName
 	{
@@ -35,6 +36,10 @@ public class Scene: Manager
 		}
 	}
 
+	#endregion // getters
+
+	#region methods
+
 	public void createObject(Scene child)
 	{
 		GameObject obj = null;
@@ -45,20 +50,27 @@ public class Scene: Manager
 		else if(child != null)
 		{
 			obj = new GameObject(child.ToString());
+            sceneObject = obj;
 		}
 		
-		sceneObject = GameObject.Instantiate(obj);
+		//sceneObject = GameObject.Instantiate(obj);
 		transform = sceneObject.transform;
 	}
+
+	#endregion // methods
+
+	private bool hasInitializedScene = false;
+
+	#region virtual methods
 	// Use this for initialization
-	protected virtual void initializeScene () 
+	public virtual void initializeScene (params object[] param) 
 	{	
 	
 	}
 
-	protected virtual void hasInitializeScene ()
+	public virtual bool hasInitializeScene ()
 	{
-
+		return hasInitializedScene;
 	}
 
 	// Update is called once per frame
@@ -67,8 +79,54 @@ public class Scene: Manager
 	
 	}
 
+	protected virtual void pauseScene () 
+	{
+		
+	}
+
+	protected virtual void unpauseScene () 
+	{
+		
+	}
+
 	protected virtual void disposeScene ()
 	{
 
 	}
+
+	#endregion // virtual methods
+
+	#region inherited methods
+
+	protected sealed override void initializeManager (params object[] param)
+	{
+
+	}
+
+	protected sealed override bool hasInitializeManager ()
+	{
+		return hasInitializedScene;
+	}
+
+	protected override void updateManager (float dt)
+	{
+
+	}
+
+	protected override void pauseManager ()
+	{
+
+	}
+
+	protected override void unpauseManager ()
+	{
+
+	}
+
+	protected override void disposeManager ()
+	{
+
+	}
+
+	#endregion // inherited methods
 }

@@ -27,8 +27,9 @@ public class Manager
 		//initialize variables etc. param is used to transfer stuff between scenes
 	}
 
-	protected virtual void hasInitializeManager(bool hasInitialized)
+	protected virtual bool hasInitializeManager()
 	{
+		return false;
 		//flag if initialization is done
 	}
 
@@ -64,11 +65,27 @@ public class Manager
 	public void Update(float dt)
 	{
 		updateManager(dt);
+		if(children == null)
+		{
+			children = new List<Manager>();
+		}
+		for(int i = 0; i < children.Count; i++)
+		{
+			if(children != null)
+				if(children[i] != null)
+					children[i].Update(dt);
+		}
 	}
 
 	public void Pause()
 	{
 		pauseManager();
+		for(int i = 0; i < children.Count; i++)
+		{
+			if(children != null)
+				if(children[i] != null)
+					children[i].Pause();
+		}
 	}
 
 	public void Unpause()
