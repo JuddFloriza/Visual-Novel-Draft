@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class Main : MonoBehaviour
@@ -16,6 +17,22 @@ public class Main : MonoBehaviour
             return s_instance;
         }
     }
+
+    #region globals
+
+    private static Vector3 scale;
+    //private static float width = Camera.main.orthographicSize * 2.0f * Screen.width / Screen.height;
+
+    //public static Vector3 localScale
+    //{
+    //    get
+    //    {
+    //        return new Vector3(width / 9.0f, width / 9.0f, width / 9.0f); ;
+    //    }
+    //}
+
+
+    #endregion // globals
 
     #region setfirstscene
 

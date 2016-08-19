@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
 	private bool isTyping = false;
 	private bool autoDialogue = false;
 	private int counter = 0;
-	private float speed = 6.0f;
+	private float speed = 6.1f;
 	// Use this for initialization
 	void Start () 
 	{
@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 				autoDialogue = false;
 			} else {
 				Debug.Log ("AUTO DIALOGUE");
-				//ShowDialogue ();
+                //ShowDialogue ();
 				autoDialogue = true;
 			}
 		}
@@ -159,7 +159,6 @@ public class DialogueManager : MonoBehaviour
 //				dialogueBox.text = dialogue;
 //				isTyping = false;
 //			}
-			Debug.Log("This is triggered.");
 
 			if(counter > dialogue.Length || dialogue.Length <= 0)
 			{

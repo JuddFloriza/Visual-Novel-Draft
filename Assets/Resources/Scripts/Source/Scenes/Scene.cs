@@ -12,7 +12,7 @@ public class Scene: Manager
 
 	public Scene()
 	{
-		createObject(this);
+	    createObject(this);
         sceneName = this.ToString();
 	}
 
@@ -46,7 +46,8 @@ public class Scene: Manager
 		if(child != null && sceneName != null)
 		{
 			obj = new GameObject(sceneName);
-		}
+            sceneObject = obj;
+        }
 		else if(child != null)
 		{
 			obj = new GameObject(child.ToString());
