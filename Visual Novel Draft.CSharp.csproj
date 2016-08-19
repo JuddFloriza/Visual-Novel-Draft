@@ -63,15 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Character.cs" />
-    <Compile Include="Assets\Scripts\ChoiceButton.cs" />
-    <Compile Include="Assets\Scripts\DialogueManager.cs" />
-    <Compile Include="Assets\Scripts\DialogueParser.cs" />
-    <Compile Include="Assets\Scripts\GameScene.cs" />
-    <Compile Include="Assets\Scripts\Source\Main\Main.cs" />
-    <Compile Include="Assets\Scripts\Source\Main\Manager.cs" />
-    <Compile Include="Assets\Scripts\Source\Scenes\Scene.cs" />
-    <Compile Include="Assets\Scripts\Source\Scenes\SceneManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Character.cs" />
+    <Compile Include="Assets\Resources\Scripts\ChoiceButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\DialogueParser.cs" />
+    <Compile Include="Assets\Resources\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\GameScene.cs" />
+    <Compile Include="Assets\Resources\Scripts\Source\Main\Main.cs" />
+    <Compile Include="Assets\Resources\Scripts\Source\Main\Manager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Source\Scenes\Scene.cs" />
+    <Compile Include="Assets\Resources\Scripts\Source\Scenes\SceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Data\Dialogue1.txt" />
