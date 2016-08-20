@@ -55,6 +55,8 @@ public class SceneManager : Manager
 		{
 			scene.setParent(currentScene.parent);
 			currentScene.Dispose(); //Destroy gameobject and unload resources
+
+            GameObject.Destroy(currentScene.getTransform.gameObject);
 			sceneList.Remove(currentScene);
 		}
 		if(scene != null)
@@ -72,6 +74,11 @@ public class SceneManager : Manager
         initializeScene();
     }
 
+    protected override void updateManager(float dt)
+    {
+        updateScene(dt);
+    }
+
     // Use this for initialization
     protected virtual void initializeScene () 
 	{
@@ -87,9 +94,9 @@ public class SceneManager : Manager
 	}
 	
 	// Update is called once per frame
-	protected virtual void updateScene () 
+	protected virtual void updateScene (float dt) 
 	{
-	
+        currentScene.Update(dt);
 	}
 
 	protected virtual void disposeScene ()

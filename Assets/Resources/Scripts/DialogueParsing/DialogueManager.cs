@@ -126,6 +126,7 @@ public class DialogueManager : MonoBehaviour
 		for(int i = 0; i < options.Length; i++)
 		{
 			GameObject button = (GameObject) Instantiate(choiceBox);
+            GameObject container = GameObject.Find("ButtonContainer");
 			Button b = button.GetComponent<Button>();
 			ChoiceButton cb = button.GetComponent<ChoiceButton>();
 
@@ -135,6 +136,7 @@ public class DialogueManager : MonoBehaviour
 			b.transform.SetParent(this.transform);
 			b.transform.localPosition = new Vector3(0, -25 + (i*50));
 			b.transform.localScale = new Vector3(1,1,1);
+            b.transform.SetParent(container.transform);
 
 			buttons.Add(b);
 		}

@@ -38,7 +38,7 @@ public class Main : MonoBehaviour
 
     private void setFirstScene()
     {
-        SceneManager.replaceCurrentScene<GameScene>();
+        SceneManager.replaceCurrentScene<StartScene>();
     }
 
     #endregion // setfirstscene
@@ -69,7 +69,7 @@ public class Main : MonoBehaviour
 	// Update is called once per frame
 	private void Update () 
 	{
-	
+        mainManager.Update(Time.deltaTime);
 	}
 
 	#region methods
@@ -83,6 +83,7 @@ public class Main : MonoBehaviour
 
 		manager.Initialize();
 		manager.setParent(parent);
+        parent.managerChildren.Add(manager);
 
 		return manager;
 	}

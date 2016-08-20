@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Manager 
 {
 	protected Manager localParent;
-	protected List<Manager> children;
+	protected List<Manager> children = new List<Manager>();
 
 	#region gettersetter
 
@@ -16,6 +16,14 @@ public class Manager
 			return localParent;
 		}
 	}
+
+    public List<Manager> managerChildren
+    {
+        get
+        {
+            return children;
+        }
+    }
 
 	#endregion // gettersetter
 

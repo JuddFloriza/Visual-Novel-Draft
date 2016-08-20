@@ -111,7 +111,7 @@ public class Scene: Manager
 
 	protected override void updateManager (float dt)
 	{
-
+        updateScene();
 	}
 
 	protected override void pauseManager ()
